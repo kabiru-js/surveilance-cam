@@ -1,0 +1,37 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments (strict: do not commit local binaries)
+stream_env/
+*/stream_env/
+venv/
+env/
+ENV/
+.venv
+
+# Local persistent SQLite & vector stores
+*.db
+*.sqlite
+*.sqlite3
+memory_vectors.db
+test_memory.db
+
+# IDE & Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & scratch
+*.log
+*.tmp
+scratch/
