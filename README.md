@@ -52,10 +52,22 @@ Spectra solves the **Cross-Camera Entity Association Problem** at microsecond la
                      │  - Kinematic Velocity & Teleportation Verification     │
                      │  - Global Entity Resolution (Link vs. Mint)            │
                      └────────────────────────────┬───────────────────────────┘
+                                                  │ Enriched Spatial-Temporal Event:
+                                                  │ {global_entity_id, camera_id,
+                                                  │  zone_id, label, color, plate}
+                                                  ▼
+                     ┌────────────────────────────────────────────────────────┐
+                     │         MODULE 3: EVENT & AUTOMATION ENGINE            │
+                     │  - SQLite Time-Series Database (WAL Mode, Composite Idx)│
+                     │  - Stateful Complex Event Processing (Sliding Sessions)│
+                     │  - Real-Time Security Rules (Breach, Loiter, Parking)  │
+                     │  - Deduplication Cooldown Filtering (60s Grace Window) │
+                     │  - Asynchronous WebSocket Broadcast Bus (:8765)        │
+                     └────────────────────────────┬───────────────────────────┘
                                                   │
                                                   ▼
-                                [ Global Persistent World State ]
-                          (Persistent Entity Trails across Camera Nodes)
+                                [ Real-Time Incident Response ]
+                         (Instantaneous WebSocket Dashboards & Audit Store)
 ```
 
 ---
@@ -148,7 +160,13 @@ C:\Users\USER\spectra_v1\
 │   ├── memory_engine.py                # Orchestrator: Identity resolution (Link vs. Mint)
 │   ├── test_module_2.py                # Multi-camera scenario test suite (A, B, C)
 │   └── HOW_TO_TEST.md                  # Verification guide & scientific benchmark datasets
-├── module_3_automation/                # Module 3: Policy Execution & Alert Dispatch (Planned)
+├── module_3_automation/                # Module 3: Stateful Event & Automation Engine
+│   ├── event_store.py                  # High-speed SQLite time-series observation & alert store
+│   ├── cep_engine.py                   # In-memory Complex Event Processor with sliding sessions
+│   ├── notification_bus.py             # Asynchronous WebSocket broadcast server (:8765)
+│   ├── automation_engine.py            # Orchestrator: Ingestion, CEP rules, and notification dispatch
+│   ├── test_module_3.py                # Automated validation suite (Scenarios A, B, C, D)
+│   └── HOW_TO_TEST.md                  # Comprehensive verification guide for automation engine
 └── module_4_conversational/            # Module 4: Multimodal Reasoning & Chat Agent (Planned)
 ```
 
@@ -208,7 +226,7 @@ To evaluate Spectra against peer architectures, researchers and engineers should
 
 - [x] **Module 1**: Edge Perception Sandbox (YOLOv8n ONNX, ALPR, Kalman Tracker, Virtual Zones)
 - [x] **Module 2**: Spatial-Temporal Memory (128-Dim Embeddings, Vector SQLite, Kinematic Graph Engine)
-- [ ] **Module 3**: Real-Time Automated Policy & Incident Engine (Dynamic rule engines, event dispatch)
+- [x] **Module 3**: Real-Time Automated Policy & Incident Engine (SQLite WAL Time-Series, CEP Engine, WebSocket Notification Bus)
 - [ ] **Module 4**: Conversational Intelligence (Multimodal LLM / VLM grounded in spatial-temporal state graph)
 
 ---
