@@ -234,3 +234,4 @@ To evaluate Spectra against peer architectures, researchers and engineers should
 ## License
 
 This software is released under the **MIT License**. Engineered for safety, resilience, and sovereignty at the physical edge.
+"# surveilance-cam" 
